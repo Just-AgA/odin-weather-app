@@ -14,8 +14,9 @@ async function returnedData(data) {
     const visibility = data.currentConditions.visibility;
     const windspeed = data.currentConditions.windspeed;
     const daysArr = data.days;
+    const icon = data.currentConditions.icon;
 
-    return { conditions, feelsLike, humidity, dateTime, snow, sunrise, sunset, temperature, visibility, windspeed, daysArr };
+    return { conditions, feelsLike, humidity, dateTime, snow, sunrise, sunset, temperature, visibility, windspeed, daysArr, icon };
 }
 
 export { returnedData };
