@@ -35,5 +35,11 @@ async function renderCurrentWeather(data) {
 
     currConditions.prepend(img);
 
-   
+    // Add event listener to toggle temperatures
+    const toggleBtn = currConditions.querySelector('.toggle-temp');
+    toggleBtn.addEventListener('click', () => {
+        toggleTemperature(currConditions);
+    });
+
+    return currConditions;
 }
