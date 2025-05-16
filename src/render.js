@@ -43,3 +43,22 @@ async function renderCurrentWeather(data) {
 
     return currConditions;
 }
+
+function renderNextDays(daysArr) {
+    const numDays = document.createElement('div');
+    numDays.classList.add('days-array');
+
+    daysArr.slice(1).forEach(day => {
+
+        const li = document.createElement('li');
+        li.innerHTML = `<h4>Date: ${day.datetime}</h4>
+                        <h4>Max. Temp: ${((day.tempmax - 32) * 5 / 9).toFixed(1)}°C Min. Temp: ${((day.tempmin - 32) * 5 / 9).toFixed(1)}°C</h4>
+                        <h4>Conditions: ${day.conditions}</h4>
+                        <h4>Humidity: ${day.humidity}</h4>`;
+
+        numDays.appendChild(li);
+    });
+
+    return numDays;
+}
+
