@@ -62,3 +62,17 @@ function renderNextDays(daysArr) {
     return numDays;
 }
 
+function toggleTemperature(container) {
+    const tempSpan = container.querySelector('.temp-value');
+    const feelsLikeSpan = container.querySelector('.feels-like');
+
+    const currentUnit = tempSpan.dataset.unit;
+    const newUnit = currentUnit === 'F' ? 'C' : 'F';
+
+    tempSpan.textContent = ${tempSpan.dataset[newUnit.toLowerCase()]}°${newUnit};
+    feelsLikeSpan.textContent = ${feelsLikeSpan.dataset[newUnit.toLowerCase()]}°${newUnit};
+
+    tempSpan.dataset.unit = newUnit;
+    feelsLikeSpan.dataset.unit = newUnit;
+}
+
