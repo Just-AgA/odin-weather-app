@@ -76,3 +76,4 @@ function toggleTemperature(container) {
     feelsLikeSpan.dataset.unit = newUnit;
 }
 
+export { renderCurrentWeather, renderNextDays };
