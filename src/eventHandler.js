@@ -19,7 +19,19 @@ function weatherEventListener() {
             return;
         }
         
-         
+        try {
+            const weather = await getWeather(inputValue);
+            const data = await returnedData(weather);
+
+            const currConditionsEl = await renderCurrentWeather(data);
+            const nextDaysEl = renderNextDays(data.daysArr);
+
+            display.appendChild(currConditionsEl);
+            display.appendChild(nextDaysEl);
+        } catch (error) {
+            console.error("Weather fetch failed:", error);
+            display.innerHTML = <h4>Failed to retrieve weather data. Please check the name of the location and try again.</h4>;
+        }   
     })
 }
 
