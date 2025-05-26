@@ -15,7 +15,7 @@ function weatherEventListener() {
         display.innerHTML = '';
     
         if (!inputValue) {
-            display.innerHTML = <h4>Please enter a valid location!</h4>;
+            display.innerHTML = `<h4>Please enter a valid location!</h4>`;
             return;
         }
         
@@ -30,7 +30,7 @@ function weatherEventListener() {
             display.appendChild(nextDaysEl);
         } catch (error) {
             console.error("Weather fetch failed:", error);
-            display.innerHTML = <h4>Failed to retrieve weather data. Please check the name of the location and try again.</h4>;
+            display.innerHTML = `<h4>Failed to retrieve weather data. Please check the name of the location and try again.</h4>`;
         }   
     })
 }
